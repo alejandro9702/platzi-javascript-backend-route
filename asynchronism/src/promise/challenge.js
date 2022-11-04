@@ -22,13 +22,15 @@ fetchData(`${API}/products`)
   .then((response) => response.json())
   .then((product) => {
     console.log(product);
-    return fetchData(`${API}/categories/${product.category.id}`);
+    return fetchData(`${API}/categories/${product?.category.id}`);
   })
   .then((response) => response.json())
   .then((category) => {
-    console.log(category.name);
+    console.log("category: "+category.name);
   })
-  .catch((error) => {})
+  .catch((error) => {
+    console.log("catch: ",error);
+  })
   .finally(() => {
     console.log("finally");
   });

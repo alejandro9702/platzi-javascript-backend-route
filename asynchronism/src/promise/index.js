@@ -2,7 +2,7 @@ const promise = new Promise((resolve, reject) => {
   resolve("hey");
 });
 
-const cows = 9;
+const cows = 11;
 
 const counCows = new Promise((resolve, reject) => {
   if (cows > 10) {
@@ -33,7 +33,7 @@ function delay(time, message) {
   });
 }
 
-delay(0, "Hello after 2s")
+delay(3000, "Hello after 2s")
   .then((message) => console.log(message))
   .catch((err) => {
     console.log(err);
