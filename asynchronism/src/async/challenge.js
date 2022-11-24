@@ -10,7 +10,7 @@ async function fetchData(urlApi) {
 const anotherFunction = async (urlApi) => {
 
     try {
-        const products = await fetchData(`${urlApi}/produts`);
+        const products = await fetchData(`${urlApi}/products`);
         const product = await fetchData(`${urlApi}/products/${products[1].id}`);
         const category = await fetchData(`${urlApi}/categories/${product.category?.id}`);
 
@@ -25,4 +25,5 @@ const anotherFunction = async (urlApi) => {
 
 }
 
-anotherFunction(API);
+anotherFunction(API).then(response => response.json());
+
